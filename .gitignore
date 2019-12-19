@@ -1,0 +1,5 @@
+docs/*
+Manifest.toml
+notebooks/slides.ipynb
+slides.jl
+*.swp
