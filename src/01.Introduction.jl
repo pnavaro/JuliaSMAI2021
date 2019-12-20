@@ -4,13 +4,13 @@ ENV["GKSwstype"]="100" #src
 #md #
 #md #  - My name is *Pierre Navaro*
 #md #
-#md #  - **Fortran 77 + PVM** : during my PhD 1998-2002 (Université du Havre) 
+#md #  - **Fortran 77 + PVM** : during my PhD 1998-2002 (Université du Havre)
 #md #
 #md #  - **Fortran 90-2003 + OpenMP-MPI** : Engineer in Strasbourg (2003-2015) at IRMA
 #md #
 #md #  - **Numpy + Cython, R + Rcpp** : Engineer in Rennes (2015-now) at IRMAR
 #md #
-#md #  - **Julia v1.0** since July 2018 
+#md #  - **Julia v1.0** since July 2018
 #md #
 #md #  ## Instructions to open the notebooks
 #md #
@@ -25,9 +25,16 @@ ENV["GKSwstype"]="100" #src
 #md # - Born in 2009 and version 1.0 was released in August 2018.
 #md # - High-level languages like Python and R let one explore and experiment rapidly, but can run slow.
 #md # - Low-level languages like Fortran/C++ tend to take longer to develop, but run fast.
-#md # - This is sometimes called the "two language problem" and is something the Julia developers set out to eliminate. 
+#md # - This is sometimes called the "two language problem" and is something the Julia developers set out to eliminate.
 #md # - Julia's promise is to provide a "best of both worlds" experience for programmers who need to develop novel algorithms and bring them into production environments with minimal effort.
 #md #
+
+#md # **Julia: A Fresh Approach to Numerical Computing**
+#md # 
+#md # *Jeff Bezanson, Alan Edelman, Stefan Karpinski, Viral B. Shah*
+#md # 
+#md # 2012
+
 
 #md # ---
 
@@ -43,7 +50,7 @@ ENV["GKSwstype"]="100" #src
 #md #
 #md # To me, this gives me a language with a lot of depth which works well for computationally-expensive scientific applications.
 #md #
-#md # [© ChrisRackaukas](https://www.youtube.com/watch?v=zJ3R6vOhibA&feature=em-uploademail) 
+#md # [© ChrisRackaukas](https://www.youtube.com/watch?v=zJ3R6vOhibA&feature=em-uploademail)
 
 #md # ---
 
@@ -86,7 +93,7 @@ u = u₀[2] .* cos.(sqrt(g / L) .* sol.t)
 
 plot(sol.t, getindex.(sol.u, 2), label = "Numerical")
 plot!(sol.t, u, label = "Analytic")
-#md savefig("pendulum1.svg"); nothing # hide 
+#md savefig("pendulum1.svg"); nothing # hide
 
 #md # ![](pendulum1.svg)
 
@@ -122,7 +129,7 @@ u = u₀[2] .* cos.(sqrt(g / L) .* sol.t)
 
 plot(sol.t, getindex.(sol.u, 2), label = "Numerical")
 plot!(sol.t, u, label = "Analytic")
-#md savefig("pendulum2.svg"); nothing # hide 
+#md savefig("pendulum2.svg"); nothing # hide
 
 #md # ![](pendulum2.svg)
 
