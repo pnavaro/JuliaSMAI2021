@@ -52,6 +52,14 @@ function exact!(f, time, mesh :: Mesh; shift=1.0)
 
 end
 
+#md # ---
+
+"""
+    exact( time, mesh; shift=1.0)
+
+Computes the solution of the rotation problem
+
+"""
 function exact( time, mesh :: Mesh; shift=1.0)
    
     f = zeros(Float64, (mesh.nx, mesh.ny))
@@ -59,6 +67,10 @@ function exact( time, mesh :: Mesh; shift=1.0)
     return f
 
 end
+
+#md # --
+
+@doc exact
 
 #md # ---
 
@@ -135,9 +147,13 @@ end
 #md # Run the simulation and test error.
 
 mesh = Mesh( -π, π, 1024, -π, π, 1024)
+
 nt, tf = 100, 20.
+
 rotation_on_cpu(mesh, 1, 0.1) # trigger building
+
 etime = @time norm( rotation_on_cpu(mesh, nt, tf) .- exact( tf, mesh))
+
 println(etime)
 
 #md # ---
@@ -206,10 +222,12 @@ end
 if GPU_ENABLED
 
     nt, tf = 100, 20.
+
     rotation_on_gpu(mesh, 1, 0.1)
+
     etime = @time norm( rotation_on_gpu(mesh, nt, tf) .- exact( tf, mesh))
+
     println(etime)
-    @test true #src
 
 end
 
