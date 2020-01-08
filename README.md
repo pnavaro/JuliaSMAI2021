@@ -1,5 +1,7 @@
 # Talk at INRIA Rennes January 2020
 
+Link to [slides](https://navarop.gitlabpages.inria.fr/JuliaInriaTech).
+
 To open the notebooks run them locally:
 
 ```bash
