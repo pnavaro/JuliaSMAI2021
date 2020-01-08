@@ -3,8 +3,8 @@ pages:
   stage: deploy
   script:
     - apt-get update -qq && apt-get install -y git 
-    - julia --project -e 'using Pkg; Pkg.instantiate();'
-    - julia --color=yes make.jl  # make slides
+    - env OPENBLAS_CORETYPE=haswell julia --project -e 'using Pkg; Pkg.instantiate();'
+    - env OPENBLAS_CORETYPE=haswell julia --color=yes make.jl  # make slides
     - mv docs/build public  # move to the directory picked up by Gitlab pages
   artifacts:
     paths:
