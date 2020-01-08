@@ -93,6 +93,8 @@ end
 
 #md # ---
 
+#-
+
 import Sobol
  
 # f(x,v) = 1/2π (1 + α cos (kx * x) * exp(-(vx^2+vy^2))
@@ -123,7 +125,7 @@ function landau_sampling!( pg :: ParticleGroup{1,2}, alpha, kx )
 
 end
 
-#nb #+
+#-
 #md # ---
 
 n_particles = 10000
@@ -133,12 +135,12 @@ landau_sampling!(pg, alpha, kx)
 
 #md # --
 
-#nb #+
+#-
 xp = vcat([get_x(pg, i) for i in 1:pg.n_particles]...)
 vp = vcat([get_v(pg, i) for i in 1:pg.n_particles]'...)
 
 #md # ---
-#nb #+
+#-
 
 using Plots
 
@@ -155,7 +157,7 @@ plot!(pp[3,1], v -> exp( - v^2 / 2) * 4 / π^2 , -6, 6, lab="")
 
 #md # ---
 
-#nb #+
+#-
 histogram2d(vp[:,1], vp[:,2], normalize=true, bins=100)
 #md savefig("hist2d.svg"); nothing # hide
 
