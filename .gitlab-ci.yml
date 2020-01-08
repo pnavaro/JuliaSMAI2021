@@ -3,7 +3,7 @@ pages:
   stage: deploy
   script:
     - apt-get update -qq && apt-get install -y git 
-    - julia --project -e 'using Pkg; Pkg.instantiate(); Pkg.dev("Remark");'
+    - julia --project -e 'using Pkg; Pkg.instantiate();'
     - julia --color=yes make.jl  # make slides
     - mv docs/build public  # move to the directory picked up by Gitlab pages
   artifacts:
