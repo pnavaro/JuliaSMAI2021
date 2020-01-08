@@ -93,7 +93,7 @@ sol = solve(prob, Tsit5(), reltol = 1e-6)
 # Analytic and computed solution
 u = u₀[2] .* cos.(sqrt(g / L) .* sol.t)
 
-plot(sol.t, getindex.(sol.u, 2), label = "Numerical")
+scatter(sol.t, getindex.(sol.u, 2), label = "Numerical")
 plot!(sol.t, u, label = "Analytic")
 #md savefig("pendulum1.svg"); nothing # hide
 
