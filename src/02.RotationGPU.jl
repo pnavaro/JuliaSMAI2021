@@ -1,3 +1,5 @@
+ENV["GKSwstype"]="100" #src
+
 # ## GPU Computing
 
 # https://github.com/JuliaGPU
@@ -168,13 +170,14 @@ println(etime)
 
 #md # # Test if GPU packages are installed
 
-using Pkg 
+using CUDAdrv
 
-GPU_ENABLED = haskey(Pkg.installed(), "CUDAdrv")
+GPU_ENABLED = CUDAdrv.functional()
 
 if GPU_ENABLED
 
-    using CUDAdrv, CuArrays, CuArrays.CUFFT
+    using Pkg; Pkag.add("CuArrays")
+    using CuArrays, CuArrays.CUFFT
     
     println(CUDAdrv.name(CuDevice(0)))
 
@@ -197,11 +200,9 @@ if GPU_ENABLED
         exact!( f, 0.0, mesh)
         
         d_f    = CuArray(f) # allocate f on GPU
-        
-        p_x    = plan_fft!(d_f,  [1]) # Create fft plans on GPU
-        pinv_x = plan_ifft!(d_f, [1])
-        p_y    = plan_fft!(d_f,  [2])
-        pinv_y = plan_ifft!(d_f, [2])  
+        # Create fft plans on GPU
+        p_x, pinv_x = plan_fft!(d_f,  [1]), plan_ifft!(d_f, [1])
+        p_y, pinv_y = plan_fft!(d_f,  [2]), plan_ifft!(d_f, [2])  
         
         d_exky = CuArray(exp.( 1im*tan(dt/2) .* mesh.x  .* mesh.ky'))
         d_ekxy = CuArray(exp.(-1im*sin(dt)   .* mesh.y' .* mesh.kx ))
