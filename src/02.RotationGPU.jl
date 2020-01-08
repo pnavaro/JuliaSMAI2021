@@ -176,7 +176,7 @@ GPU_ENABLED = CUDAdrv.functional()
 
 if GPU_ENABLED
 
-    using Pkg; Pkg.add("CuArrays")
+    using Pkg; Pkg.add("CuArrays"); nothing #hide
     using CuArrays, CuArrays.CUFFT
     
     println(CUDAdrv.name(CuDevice(0)))
@@ -199,8 +199,7 @@ if GPU_ENABLED
         f   = zeros(ComplexF64,(mesh.nx, mesh.ny))
         exact!( f, 0.0, mesh)
         
-        d_f    = CuArray(f) # allocate f on GPU
-        # Create fft plans on GPU
+        d_f    = CuArray(f) # allocate f and create fft plans on GPU
         p_x, pinv_x = plan_fft!(d_f,  [1]), plan_ifft!(d_f, [1])
         p_y, pinv_y = plan_fft!(d_f,  [2]), plan_ifft!(d_f, [2])  
         
