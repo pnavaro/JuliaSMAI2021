@@ -15,6 +15,16 @@ A = rand(1024, 256); B = rand(256, 1024); C = rand(1024, 1024)
 
 #md # --
 
+function test!(C, A, B)
+    C .= C - A * B
+end
+
+A = rand(1024, 256); B = rand(256, 1024); C = rand(1024, 1024)
+@btime test!(C, A, B); #C, A and B are matrices. 
+#md nothing # hide
+
+#md # --
+
 function test_opt(A, B, C)
     BLAS.gemm!('N','N', -1., A, B, 1., C)
     return C
@@ -110,9 +120,9 @@ end
 #md # - In ~1-2 Years if you want a smooth deploy.
 #md # - In ~3-5 Years if you want a 100% smooth experience.
 #md 
-#md # ## Julia Munich Meetup 
-#md # Every two months, poll for the next meeting that
-#md # will take place at Garching Campus : https://doodle.com/poll/z3ft2dytnaebyhh7.
+#md # ## Think Julia: How to Think Like a Computer Scientist
+#md #
+#md # https://github.com/BenLauwens/ThinkJulia.jl
 #md #
 #md # ## Python-Julia benchmarks by Thierry Dumont
 #md #
@@ -138,5 +148,3 @@ end
 #md #  * JuliaGPU - GPU Computing for Julia.
 #md #  * FluxML - The Elegant Machine Learning Stack.
 #md #
-
-@test true #src
