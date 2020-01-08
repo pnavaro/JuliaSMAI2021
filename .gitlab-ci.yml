@@ -1,9 +1,7 @@
 pages:
   stage: deploy
   script:
-    - module load julia
-    - julia --project -e 'using Pkg; Pkg.instantiate();'
-    - julia --project --color=yes make.jl  # make slides
+    - /opt/julia-1.2.0/bin/julia --color=yes make.jl  # make slides
     - mv docs/build public  # move to the directory picked up by Gitlab pages
   artifacts:
     paths:
