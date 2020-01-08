@@ -22,7 +22,7 @@ ENV["GKSwstype"]="100" #src
 #md #
 #md # # Why Julia?
 #md #
-#md # - Born in 2009 and version 1.0 was released in August 2018.
+#md # - Started in 2009 and first version was released in 2012.
 #md # - High-level languages like Python and R let one explore and experiment rapidly, but can run slow.
 #md # - Low-level languages like Fortran/C++ tend to take longer to develop, but run fast.
 #md # - This is sometimes called the "two language problem" and is something the Julia developers set out to eliminate.
@@ -33,7 +33,7 @@ ENV["GKSwstype"]="100" #src
 #md # 
 #md # *Jeff Bezanson, Alan Edelman, Stefan Karpinski, Viral B. Shah*
 #md # 
-#md # 2012
+#md # SIAM Rev., 59(1), 65–98. (34 pages) 2012
 
 
 #md # ---
@@ -64,6 +64,8 @@ ENV["GKSwstype"]="100" #src
 
 #md # ---
 
+#md # # Simple gravity pendulum
+
 using DifferentialEquations, Plots
 
 g = 9.79 # Gravitational constants
@@ -88,7 +90,7 @@ sol = solve(prob, Tsit5(), reltol = 1e-6)
 
 #md # ---
 
-# Analytic solution
+# Analytic and computed solution
 u = u₀[2] .* cos.(sqrt(g / L) .* sol.t)
 
 plot(sol.t, getindex.(sol.u, 2), label = "Numerical")
