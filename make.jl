@@ -5,7 +5,7 @@ using  Plots
 
 using Pkg
 
-Pkg.dev("Remark")
+pkg"dev Remark"
 
 import Remark
 
