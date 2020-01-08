@@ -4,26 +4,27 @@ ENV["GKSwstype"]="100" #src
 
 using Random, LinearAlgebra, BenchmarkTools
 
-function test(A, B, C)
+A = rand(1024, 256); B = rand(256, 1024); C = rand(1024, 1024)
+
+function test1(A, B, C)
     C = C - A * B
     return C
 end
 
-A = rand(1024, 256); B = rand(256, 1024); C = rand(1024, 1024)
-@btime test(A, B, C); #C, A and B are matrices. 
+@btime test1(A, B, C); #C, A and B are matrices. 
 #md nothing # hide
 
 #md # --
 
-function test!(C, A, B)
-    C .= C - A * B
+function test2(A, B, C)
+    C .-= A * B
+    return C
 end
 
-A = rand(1024, 256); B = rand(256, 1024); C = rand(1024, 1024)
-@btime test!(C, A, B); #C, A and B are matrices. 
+@btime test2(A, B, C); #C, A and B are matrices. 
 #md nothing # hide
 
-#md # --
+#md # ---
 
 function test_opt(A, B, C)
     BLAS.gemm!('N','N', -1., A, B, 1., C)
@@ -35,7 +36,7 @@ end
 #md # --
 
 C = rand(1024, 1024)
-all(test(A, B, C) .== test_opt(A, B, C))
+all(test1(A, B, C) .== test2(A, B, C) .== test_opt(A, B, C))
 
 #md # ---
 
@@ -46,8 +47,8 @@ using FFTW
 xmin, xmax, nx = 0, 4π, 1024
 ymin, ymax, ny = 0, 4π, 1024
 
-x = range(xmin, stop=xmax, length=nx+1)[1:end-1]
-y = range(ymin, stop=ymax, length=ny+1)[1:end-1]
+x = LinRange(xmin, xmax, nx+1)[1:end-1]
+y = LinRange(ymin, ymax, ny+1)[1:end-1]
 
 ky  = 2π ./ (ymax-ymin) .* [0:ny÷2-1;ny÷2-ny:-1]
 exky = exp.( 1im .* ky' .* x)
@@ -124,10 +125,16 @@ end
 #md #
 #md # https://github.com/BenLauwens/ThinkJulia.jl
 #md #
+#md # ---
+#md #
 #md # ## Python-Julia benchmarks by Thierry Dumont
 #md #
 #md # https://github.com/Thierry-Dumont/BenchmarksPythonJuliaAndCo/wiki
 #md 
+#md # ## Mailing Lists
+#md # - Rennes : https://listes.univ-rennes1.fr/wws/info/math-julia
+#md # - France : https://listes.services.cnrs.fr/wws/info/julia
+#md # - World : https://discourse.julialang.org
 #md # ---
 #md 
 #md # # Julia is a language made for Science.
