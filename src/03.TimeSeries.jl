@@ -115,11 +115,10 @@ scatter(ts.t, [ts[1],ts[2]])
 
 # # Linear regression with obvious operation
 
-X = hcat(ones(nt), ts.t, ts[1])
-y = ts[2];
-
-#md # --
 using LinearAlgebra
+
+X = hcat(ones(nt), ts.t, ts[1])
+y = ts[2]
 
 @show β = inv(X'X) * X'y
 
