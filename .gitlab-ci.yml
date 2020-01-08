@@ -1,8 +1,8 @@
 pages:
   stage: deploy
   script:
-    - /opt/julia-1.2.0/bin/julia --project -e 'using Pkg; Pkg.instantiate()'
-    - /opt/julia-1.2.0/bin/julia --project --color=yes make.jl  # make slides
+    - env CUDA_ROOT=/usr/local/cuda-9.0 /opt/julia-1.2.0/bin/julia --project -e 'using Pkg; Pkg.instantiate()'
+    - env CUDA_ROOT=/usr/local/cuda-9.0 /opt/julia-1.2.0/bin/julia --project --color=yes make.jl  # make slides
     - mv docs/build public  # move to the directory picked up by Gitlab pages
   artifacts:
     paths:
