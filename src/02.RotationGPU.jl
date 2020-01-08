@@ -176,7 +176,6 @@ GPU_ENABLED = CUDAdrv.functional()
 
 if GPU_ENABLED
 
-    using Pkg; Pkg.add("CuArrays"); nothing #hide
     using CuArrays, CuArrays.CUFFT
     
     println(CUDAdrv.name(CuDevice(0)))
