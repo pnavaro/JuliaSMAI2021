@@ -14,7 +14,7 @@ end
 @btime test1(A, B, C); #C, A and B are matrices. 
 #md nothing # hide
 
-#md # --
+# --
 
 function test2(A, B, C)
     C .-= A * B
@@ -24,7 +24,7 @@ end
 @btime test2(A, B, C); #C, A and B are matrices. 
 #md nothing # hide
 
-#md # ---
+# ---
 
 function test_opt(A, B, C)
     BLAS.gemm!('N','N', -1., A, B, 1., C)
@@ -33,10 +33,15 @@ end
 @btime test_opt(A, B, C) # avoids taking two unnecessary copies of the matrix C.
 #md nothing # hide
 
-#md # --
+# --
 
 C = rand(1024, 1024)
-all(test1(A, B, C) .== test2(A, B, C) .== test_opt(A, B, C))
+all(test1(A, B, C) .== test2(A, B, C))
+
+# --
+
+C = rand(1024, 1024)
+all(test1(A, B, C) .== test_opt(A, B, C))
 
 #md # ---
 
