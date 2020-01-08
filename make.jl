@@ -2,6 +2,11 @@ ENV["GKSwstype"]="100"
 
 using  Literate
 using  Plots
+
+using Pkg
+
+Pkg.dev("Remark")
+
 import Remark
 
 files =  filter( f -> startswith(f, "0"), readdir("src")) |> collect
