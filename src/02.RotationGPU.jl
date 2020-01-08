@@ -170,9 +170,10 @@ println(etime)
 
 #md # # Test if GPU packages are installed
 
-JULIA_CUDA_SILENT=true #hide
-
+using Suppressor #hide
+@suppress begin #hide
 using CUDAdrv
+end #hide
 
 GPU_ENABLED = CUDAdrv.functional()
 
