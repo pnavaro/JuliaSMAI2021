@@ -35,6 +35,7 @@ struct Mesh
     end
 end
 
+#-
 #md # ---
 
 #md # # Exact computation of solution
@@ -52,6 +53,7 @@ function exact!(f, time, mesh :: Mesh; shift=1.0)
 
 end
 
+#-
 #md # ---
 
 """
@@ -68,10 +70,12 @@ function exact( time, mesh :: Mesh; shift=1.0)
 
 end
 
+#-
 #md # --
 
 @doc exact
 
+#-
 #md # ---
 
 #md # # Create animation to show what we compute
@@ -101,6 +105,7 @@ function animation( tf, nt)
     anim
     
 end
+#-
 
 #md # ---
 
@@ -111,6 +116,7 @@ anim = animation( 2π, 100)
 #md # ![](rotation2d.gif)
 
 #md # ---
+#-
 
 function rotation_on_cpu( mesh :: Mesh, nt :: Int64, tf :: Float64) 
     
@@ -143,6 +149,7 @@ function rotation_on_cpu( mesh :: Mesh, nt :: Int64, tf :: Float64)
 end
 
 #md # ---
+#-
 
 #md # Run the simulation and test error.
 
@@ -155,6 +162,7 @@ rotation_on_cpu(mesh, 1, 0.1) # trigger building
 etime = @time norm( rotation_on_cpu(mesh, nt, tf) .- exact( tf, mesh))
 
 println(etime)
+#-
 
 #md # ---
 
@@ -171,6 +179,7 @@ if GPU_ENABLED
     println(CUDAdrv.name(CuDevice(0)))
 
 end
+#-
 
 #md # **JuliaGPU** GPU Computing in Julia
 #md # 
@@ -216,6 +225,7 @@ if GPU_ENABLED
     end
 
 end
+#-
 
 #md # ---
 
