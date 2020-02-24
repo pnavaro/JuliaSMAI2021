@@ -111,10 +111,9 @@ end
 #md # - Compilation times can be unbearable.
 #md # - Plotting takes time (20 seconds for the first plot)
 #md # - OpenMP is better than the Julia multithreading library but it is progressing.
-#md # - There is a MPI and PETSc package but they are not very active. 
 #md # - For parallelization, The Julia community seems to prefer the distributed processing approach. 
 #md # - Does not work well with vectorized code, you need to do a lot of inplace computation to avoid memory allocations and use explicit views to avoid copy.
-#md # - Julia website proclaims that it is faster than Fortran but this is not true.
+#md # - Julia website proclaims that it is faster than Fortran but this is not true. But it is very close  and it is progressing.
 #md 
 #md # [What's Bad About Julia by Jeff Bezanson](https://www.youtube.com/watch?v=TPuJsgyu87U)
 
