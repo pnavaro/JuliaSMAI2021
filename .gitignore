@@ -1,9 +1,4 @@
-docs/*
 Manifest.toml
-notebooks/slides.ipynb
-slides.jl
 *.swp
-notebooks/.ipynb_checkpoints/01.Introduction-checkpoint.ipynb
-notebooks/.ipynb_checkpoints/02.RotationGPU-checkpoint.ipynb
-notebooks/.ipynb_checkpoints/03.TimeSeries-checkpoint.ipynb
-notebooks/.ipynb_checkpoints/04.Conclusion-checkpoint.ipynb
+slides/src/index.jl
+src/index.jl
