@@ -22,6 +22,6 @@ slideshowdir = Remark.slideshow("slides",
 # Open presentation in default browser.
 # Remark.open(slideshowdir)
 
-Literate.notebook("src/index.jl", execute=false)
+Literate.notebook("slides/src/index.jl", execute=false)
 
 cp("slides/build", "docs")
