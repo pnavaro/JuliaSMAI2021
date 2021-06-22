@@ -36,5 +36,12 @@ ENV["GKSwstype"]="100" #src
 #md # 
 #md # SIAM Rev., 59(1), 65–98. (34 pages) 2012
 
+# **SciML Scientific Machine Learning Software** https://sciml.ai/citing/
+#
+# **Differentialequations.jl--a performant and feature-rich ecosystem for solving differential equations in julia,**
+# 
+# *Christopher Rackauckas and Qing Nie*,
+#
+# Journal of Open Research Software,, volume 5, number 1, 2017.
 
 #md # ---

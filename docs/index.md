@@ -52,6 +52,18 @@
 SIAM Rev., 59(1), 65–98. (34 pages) 2012
 
 
+**SciML Scientific Machine Learning Software** https://sciml.ai/citing/
+
+
+**Differentialequations.jl–a performant and feature-rich ecosystem for solving differential equations in julia,**
+
+
+*Christopher Rackauckas and Qing Nie*,
+
+
+Journal of Open Research Software,, volume 5, number 1, 2017.
+
+
 ---
 
 
@@ -1065,7 +1077,7 @@ Much of HOODESolver.jl was implemented by Y. Mocquard while he was supported by 
 
 
   * It is still hard to build shared library or executable from Julia code.
-  * Compilation times lattency.
+  * Compilation times lattency. Using [Revise.jl](https://github.com/timholy/Revise.jl) help a lot.
   * Plotting takes time (5 seconds for the first plot)
   * OpenMP is better than the Julia multithreading library but it is progressing.
   * Does not work well with vectorized code, you need to do a lot of inplace computation to avoid memory allocations and use explicit views to avoid copy. There are some packages like [LoopVectorization.jl](https://github.com/JuliaSIMD/LoopVectorization.jl).
