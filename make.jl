@@ -24,4 +24,4 @@ slideshowdir = Remark.slideshow("slides",
 
 Literate.notebook("slides/src/index.jl", execute=false)
 
-cp("slides/build", "docs")
+cp("slides/build", "docs", force=true)

@@ -12,9 +12,10 @@ ENV["GKSwstype"]="100" #src
 #md #
 #md #  - **Julia v1.0** since July 2018
 #md #
-#md #  ## Instructions to open the notebooks
+#md #  ## Instructions to open the notebook and slides
 #md #
 #md #  https://github.com/pnavaro/JuliaSMAI2021
+#md #  https://pnavaro.github.io/JuliaSMAI2021
 #md #
 
 #md # ---
