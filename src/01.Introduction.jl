@@ -14,8 +14,8 @@ ENV["GKSwstype"]="100" #src
 #md #
 #md #  ## Instructions to open the notebook and slides
 #md #
-#md #  https://github.com/pnavaro/JuliaSMAI2021
-#md #  https://pnavaro.github.io/JuliaSMAI2021
+#md #  - https://github.com/pnavaro/JuliaSMAI2021
+#md #  - https://pnavaro.github.io/JuliaSMAI2021
 #md #
 
 #md # ---
