@@ -1077,7 +1077,7 @@ Much of HOODESolver.jl was implemented by Y. Mocquard while he was supported by 
 
 
   * It is still hard to build shared library or executable from Julia code.
-  * Compilation times lattency. Using [Revise.jl](https://github.com/timholy/Revise.jl) help a lot.
+  * Compilation times lattency. Using [Revise.jl](https://github.com/timholy/Revise.jl) helps a lot.
   * Plotting takes time (5 seconds for the first plot)
   * OpenMP is better than the Julia multithreading library but it is progressing.
   * Does not work well with vectorized code, you need to do a lot of inplace computation to avoid memory allocations and use explicit views to avoid copy. There are some packages like [LoopVectorization.jl](https://github.com/JuliaSIMD/LoopVectorization.jl).

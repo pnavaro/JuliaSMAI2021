@@ -16,7 +16,7 @@
 #md # # What's bad
 #md #
 #md # - It is still hard to build shared library or executable from Julia code.
-#md # - Compilation times lattency. Using [Revise.jl](https://github.com/timholy/Revise.jl) help a lot.
+#md # - Compilation times lattency. Using [Revise.jl](https://github.com/timholy/Revise.jl) helps a lot.
 #md # - Plotting takes time (5 seconds for the first plot)
 #md # - OpenMP is better than the Julia multithreading library but it is progressing.
 #md # - Does not work well with vectorized code, you need to do a lot of inplace computation to avoid memory allocations and use explicit views to avoid copy. There are some packages like [LoopVectorization.jl](https://github.com/JuliaSIMD/LoopVectorization.jl).
