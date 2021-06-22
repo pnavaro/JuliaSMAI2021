@@ -22,4 +22,4 @@ slideshowdir = Remark.slideshow("slides",
 # Open presentation in default browser.
 # Remark.open(slideshowdir)
 
-Literate.notebook("slide/src/index.jl", execute=false)
+Literate.notebook("src/index.jl", execute=false)

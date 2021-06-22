@@ -2,3 +2,4 @@ Manifest.toml
 *.swp
 slides/src/index.jl
 src/index.jl
+slides/build
