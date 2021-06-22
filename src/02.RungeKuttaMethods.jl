@@ -232,8 +232,8 @@ u = u₀[2] .* cos.(sqrt(g / L) .* sol.t)
 
 plot(sol.t, getindex.(sol.u, 2), label = "Numerical")
 plot!(sol.t, u, label = "Analytic")
-savefig("pendulum2.png"); nothing # hide
+savefig("pendulum2.svg"); nothing # hide
 
-# ![](pendulum2.png)
+# ![](pendulum2.svg)
 
 # ---
