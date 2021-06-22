@@ -16,6 +16,8 @@ julia --project
 julia> using Pkg
 julia> Pkg.instantiate()
 julia> using IJulia
-julia> notebook(dir=joinpath(pwd(),"notebooks"))
+julia> notebook()
 [ Info: running ...
 ```
+
+Open the index.ipynb file.
