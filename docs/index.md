@@ -1081,25 +1081,10 @@ Much of HOODESolver.jl was implemented by Y. Mocquard while he was supported by 
 
 
 
-## So when should i use Julia?
-
-
-  * Now! If you need performance and plan to write your own libraries.
-  * In ~1-2 Years if you want a smooth deploy.
-  * In ~2-3 Years if you want a 100% smooth experience.
-
-
-
-
-
-
 ## From zero to Julia!
 
 
 https://techytok.com/from-zero-to-julia/
-
-
----
 
 
 
@@ -1120,9 +1105,6 @@ https://github.com/Thierry-Dumont/BenchmarksPythonJuliaAndCo/wiki
 
 
   * https://listes.services.cnrs.fr/wws/info/julia
-
-
----
 
 
 ---

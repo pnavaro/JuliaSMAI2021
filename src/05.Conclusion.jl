@@ -25,23 +25,14 @@
 
 #md # ---
 
-#md # ## So when should i use Julia?
-#md # 
-#md # - Now! If you need performance and plan to write your own libraries.
-#md # - In ~1-2 Years if you want a smooth deploy.
-#md # - In ~2-3 Years if you want a 100% smooth experience.
-#md 
 #md # ## From zero to Julia!
 #md #
 #md # https://techytok.com/from-zero-to-julia/
 #md #
-#md # ---
-#md #
 #md # ## Python-Julia benchmarks by Thierry Dumont
 #md #
 #md # https://github.com/Thierry-Dumont/BenchmarksPythonJuliaAndCo/wiki
-#md 
+#md #
 #md # ## Mailing List
 #md # - https://listes.services.cnrs.fr/wws/info/julia
-#md # ---
-#md 
+#md #
