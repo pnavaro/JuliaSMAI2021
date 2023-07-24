@@ -10,7 +10,7 @@
 # -  $A\in {\mathcal{M}}_{n,n}(\mathbb{R})$ is such that $\tau \mapsto \exp(\tau A)$ is $2 \pi$-periodic,  
 # -  $f : (t, u) \in  \mathbb{R}\times \mathbb{R}^n \mapsto \mathbb{R}^n$.
 # 
-# https://ymocquar.github.io/HOODESolver.jl/stable/
+# https://pnavaro.github.io/HOODESolver.jl/stable/
 #
 # Philippe Chartier, Nicolas Crouseilles, Mohammed Lemou, Florian Mehats and Xiaofei Zhao.
 #
